@@ -1,6 +1,7 @@
 import argparse
 import re
 import os
+import sys
 import logging
 
 # Configure logging
@@ -38,7 +39,11 @@ class NamingConventionDetector:
 
         for i, line in enumerate(lines):
             # Detect variables
-            variable_match = re.search(r"(\w+)\s*=", line)
+            # Anchored to the line start with a negative lookahead for a
+            # second equals sign: the unanchored form also matched the left
+            # side of a comparison, so "if BadName == 3:" was reported as a
+            # badly named assignment on top of the real one.
+            variable_match = re.search(r"^\s*(\w+)\s*=(?!=)", line)
             if variable_match:
                 variable_name = variable_match.group(1)
                 if not re.match(self.variable_pattern, variable_name):
@@ -90,7 +95,7 @@ def main():
     # Input validation
     if not os.path.exists(args.filename):
         logging.error(f"Error: File '{args.filename}' not found.")
-        return
+        sys.exit(1)
 
     try:
         detector = NamingConventionDetector(args.filename, args.variable_pattern, args.function_pattern)
@@ -109,9 +114,4 @@ def main():
 
 
 if __name__ == "__main__":
-    # Example Usage:
-    # 1. Run on a specific file: python main.py my_code.py
-    # 2. Run with custom variable pattern: python main.py my_code.py --variable-pattern "^[A-Z][a-zA-Z]*$"
-    # 3. Run with custom function pattern: python main.py my_code.py --function-pattern "^[A-Z][a-zA-Z]*$"
-    # 4. Run with both custom patterns: python main.py my_code.py --variable-pattern "^[A-Z][a-zA-Z]*$" --function-pattern "^[A-Z][a-zA-Z]*$"
     main()
