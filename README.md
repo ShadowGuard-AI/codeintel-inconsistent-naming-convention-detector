@@ -1,3 +1,5 @@
+![Banner](banner.png)
+
 # codeintel-Inconsistent-Naming-Convention-Detector
 Identifies inconsistencies in naming conventions (e.g., variable names, function names) across the codebase. Uses regular expressions or simple parsing to detect violations of established naming patterns. - Focused on Tools for static code analysis, vulnerability scanning, and code quality assurance
 
