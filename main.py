@@ -33,9 +33,9 @@ class NamingConventionDetector:
         try:
             with open(self.filename, 'r') as f:
                 lines = f.readlines()
-        except FileNotFoundError:
-            logging.error(f"File not found: {self.filename}")
-            return
+        except OSError as e:
+            logging.error(f"Could not read file: {self.filename}: {e}")
+            raise
 
         for i, line in enumerate(lines):
             # Detect variables
@@ -97,6 +97,10 @@ def main():
         logging.error(f"Error: File '{args.filename}' not found.")
         sys.exit(1)
 
+    if os.path.isdir(args.filename):
+        logging.error(f"Error: '{args.filename}' is a directory, not a file.")
+        sys.exit(1)
+
     try:
         detector = NamingConventionDetector(args.filename, args.variable_pattern, args.function_pattern)
         detector.detect_inconsistencies()
@@ -111,6 +115,7 @@ def main():
 
     except Exception as e:
         logging.exception(f"An unexpected error occurred: {e}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
