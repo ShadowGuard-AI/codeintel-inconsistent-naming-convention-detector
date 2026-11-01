@@ -43,6 +43,9 @@ class NamingConventionDetector:
             # second equals sign: the unanchored form also matched the left
             # side of a comparison, so "if BadName == 3:" was reported as a
             # badly named assignment on top of the real one.
+            # I work line by line with regex, not the AST, so a name inside
+            # a string or a comment that looks like an assignment is read
+            # as one. I accept that noise in exchange for not parsing.
             variable_match = re.search(r"^\s*(\w+)\s*=(?!=)", line)
             if variable_match:
                 variable_name = variable_match.group(1)
@@ -51,6 +54,9 @@ class NamingConventionDetector:
                     logging.warning(f"Inconsistent variable name '{variable_name}' on line {i + 1}")
 
             # Detect functions
+            # I check function names and assignment targets only. Class
+            # names, arguments, and attributes are never tested against
+            # either pattern, so a CamelCase class passes in silence.
             function_match = re.search(r"def\s+(\w+)\s*\(", line)
             if function_match:
                 function_name = function_match.group(1)
@@ -106,6 +112,9 @@ def main():
         detector.detect_inconsistencies()
         inconsistencies = detector.get_inconsistencies()
 
+        # I print the list and fall through to a normal exit. A file
+        # full of bad names and a clean file both exit 0, so the
+        # printed list is the whole result.
         if inconsistencies:
             print("Naming convention inconsistencies found:")
             for line_number, type, name in inconsistencies:
