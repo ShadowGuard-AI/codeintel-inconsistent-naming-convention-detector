@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 40" role="img" aria-label="Major separator: a full run of signal flags spelling nothing, fluttering in sequence on a slate roof grey line">
+<rect x="0" y="0" width="1200" height="40" fill="#0f4a4c"/>
+<line x1="20" y1="12" x2="1180" y2="12" stroke="#6d7a84" stroke-width="2"/>
+<g><polygon points="90,12 122,20 90,28" fill="#dfe8d8"/><polygon points="230,12 262,20 230,28" fill="#c96f52"/><polygon points="370,12 402,20 370,28" fill="#e5c86e"/><polygon points="510,12 542,20 510,28" fill="#6d7a84"/><polygon points="650,12 682,20 650,28" fill="#dfe8d8"/><polygon points="790,12 822,20 790,28" fill="#c96f52"/><polygon points="930,12 962,20 930,28" fill="#e5c86e"/><polygon points="1070,12 1102,20 1070,28" fill="#6d7a84"/></g>
+</svg>

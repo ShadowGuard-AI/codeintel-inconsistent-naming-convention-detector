@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 40" role="img" aria-label="Minor separator: a short centred run of signal flags spelling nothing, fluttering in sequence on a slate roof grey line">
+<rect x="0" y="0" width="1200" height="40" fill="#0f4a4c"/>
+<line x1="470" y1="12" x2="730" y2="12" stroke="#6d7a84" stroke-width="2"/>
+<g><polygon points="510,12 538,19 510,26" fill="#c96f52"/><polygon points="575,12 603,19 575,26" fill="#e5c86e"/><polygon points="640,12 668,19 640,26" fill="#dfe8d8"/></g>
+</svg>

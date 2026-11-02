@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-label="The quay in three bands: open water and the low sun with its bright road steady in the far band with gulls crossing far off at long intervals, oil lantern flames flickering in their glass and signal flags fluttering in sequence in the middle band, and the loose end of the coiled rope at the quay edge shifting a finger's width in the near band, while the sea chest, its painted compass rose, the rope coil, and the brass bell stay still">
+<rect x="0" y="0" width="1200" height="300" fill="#0f4a4c"/>
+<rect x="0" y="0" width="1200" height="96" fill="#9aa88e"/>
+<ellipse cx="1010" cy="52" rx="46" ry="26" fill="#f7e2a0"/>
+<rect x="760" y="96" width="440" height="204" fill="#0c3f45"/>
+<g stroke="#f3efe2" stroke-width="4" opacity="0.75">
+<line x1="950" y1="120" x2="1090" y2="120"/><line x1="962" y1="146" x2="1078" y2="146"/><line x1="976" y1="172" x2="1064" y2="172"/>
+</g>
+<g fill="none" stroke="#3c4242" stroke-width="2">
+<g><animateTransform attributeName="transform" type="translate" values="-80 0;1240 0" dur="74s" repeatCount="indefinite"/><path d="M0 40 q7 -7 14 0 q7 -7 14 0"/><path d="M44 28 q6 -6 12 0 q6 -6 12 0"/></g>
+</g>
+<rect x="0" y="96" width="760" height="120" fill="#3e4642"/>
+<rect x="330" y="118" width="270" height="62" fill="#0d1011"/>
+<g>
+<line x1="60" y1="130" x2="700" y2="130" stroke="#5a4632" stroke-width="3"/>
+<g><animateTransform attributeName="transform" type="rotate" values="0 120 130;4 120 130;0 120 130" dur="3.4s" repeatCount="indefinite"/><polygon points="120,130 150,142 120,154" fill="#dfe8d8"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 210 130;5 210 130;0 210 130" dur="3.4s" begin="0.5s" repeatCount="indefinite"/><polygon points="210,130 240,142 210,154" fill="#c96f52"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 300 130;4 300 130;0 300 130" dur="3.4s" begin="1s" repeatCount="indefinite"/><polygon points="300,130 330,142 300,154" fill="#e5c86e"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 390 130;5 390 130;0 390 130" dur="3.4s" begin="1.5s" repeatCount="indefinite"/><polygon points="390,130 420,142 390,154" fill="#6d7a84"/></g>
+</g>
+<rect x="640" y="104" width="10" height="112" fill="#28221a"/>
+<polygon points="622,116 646,116 652,140 654,146 618,146 620,140" fill="#967c3e"/>
+<g>
+<rect x="196" y="176" width="34" height="40" fill="#34302a"/>
+<ellipse cx="213" cy="192" rx="7" ry="11" fill="#e8a33d"><animate attributeName="ry" values="11;8;11;9;11" dur="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.95;0.7;0.95" dur="2.6s" repeatCount="indefinite"/></ellipse>
+<rect x="520" y="182" width="30" height="34" fill="#34302a"/>
+<ellipse cx="535" cy="196" rx="6" ry="9" fill="#e8a33d"><animate attributeName="ry" values="9;7;9" dur="3.1s" repeatCount="indefinite"/></ellipse>
+</g>
+<rect x="0" y="216" width="1200" height="84" fill="#5f4a30"/>
+<g stroke="#46351f" stroke-width="3"><line x1="0" y1="240" x2="860" y2="240"/><line x1="0" y1="268" x2="920" y2="268"/></g>
+<g>
+<rect x="90" y="196" width="240" height="52" fill="#104a4c"/>
+<path d="M90 196 A120 34 0 0 1 330 196 Z" fill="#14585a"/>
+<g stroke="#f3efe2" stroke-width="3"><line x1="140" y1="176" x2="164" y2="176"/><line x1="152" y1="166" x2="152" y2="186"/><line x1="144" y1="170" x2="160" y2="182"/><line x1="160" y1="170" x2="144" y2="182"/></g>
+<rect x="142" y="188" width="12" height="60" fill="#0d1011"/><rect x="262" y="188" width="12" height="60" fill="#0d1011"/>
+<polygon points="206,200 218,208 206,211" fill="#e8a33d"/>
+</g>
+<g fill="none" stroke="#a88a5c" stroke-width="5">
+<ellipse cx="520" cy="272" rx="52" ry="13"/><ellipse cx="520" cy="272" rx="34" ry="8"/><ellipse cx="520" cy="272" rx="16" ry="4"/>
+</g>
+<path d="M572 272 q26 2 40 12" stroke="#a88a5c" stroke-width="5" fill="none">
+<animate attributeName="d" values="M572 272 q26 2 40 12;M572 272 q26 5 43 13;M572 272 q26 2 40 12" dur="7s" repeatCount="indefinite"/>
+</path>
+</svg>
