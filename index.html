@@ -3,118 +3,46 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>codeintel-inconsistent-naming-convention-detector: The Sea Chest Auction</title>
-<meta name="description" content="A lot catalogue for the naming detector: one Python file, read line by line, two snake_case patterns, and a printed list as the whole result.">
+<title>codeintel-inconsistent-naming-convention-detector: The Stud Book Registrar</title>
+<meta name="description" content="One Python file, read line by line, and every entered name checked against the one pattern the book allows.">
 <style>
-@font-face{font-family:'Belgrano';src:url('fonts/Belgrano.ttf') format('truetype');}
-@font-face{font-family:'Archivo';src:url('fonts/Archivo.ttf') format('truetype');}
-:root{--teal:#0f4a4c;--deep:#0a3436;--panel:#b9c4bc;--panel2:#a7b5ab;--tar:#0d1011;--foam:#f3efe2;--near:#eef2ec;--amber:#e8a33d}
-*{box-sizing:border-box}body{margin:0;background:var(--teal);color:var(--near);font-family:'Archivo',sans-serif;line-height:1.65}
-h1,h2,h3{font-family:'Belgrano',serif;color:var(--foam);font-weight:400}
-.hero img.heroimg{width:100%;height:52vh;object-fit:cover;display:block}
-.hero .in,main,footer{max-width:1120px;margin:0 auto;padding:1rem 6vw 2rem}
-.logo{width:230px;max-width:70vw;background:var(--tar);display:block}
-nav{display:flex;gap:1rem;flex-wrap:wrap;margin:1.2rem 0}
-.btn{display:inline-block;text-decoration:none;font-family:'Belgrano',serif;color:var(--foam);background:linear-gradient(180deg,#14585a,#0f4a4c);border:2px solid #7c6a45;border-radius:10px 10px 6px 6px;padding:.8rem 1.3rem;text-align:center;box-shadow:inset 0 0 0 3px rgba(243,239,226,.14)}
-.btn:hover{background:linear-gradient(180deg,#c8b98a,#14585a)}
-.btn:active{transform:translateY(3px)}
-.btn:focus-visible{outline:3px solid var(--foam);outline-offset:3px}
-a{color:var(--foam)}a::before{content:'';display:inline-block;width:13px;height:17px;margin-right:.5em;background:radial-gradient(circle at 50% 62%,#57451f 40%,#2e2a24 42%);border:1px solid #7c6a45;border-radius:3px;vertical-align:-2px}
-a:hover{color:var(--amber)}a:hover::before{background:radial-gradient(circle at 50% 62%,var(--amber) 45%,#2e2a24 48%)}
-.btn::before{content:none}
-.plate{background:var(--panel);color:#17323a;padding:.4rem 1.5rem 1.3rem;margin:1.8rem 0;position:relative;border:1px solid #7e9184}
-.plate h2,.plate h3{color:#0a3436}
-.plate .rose{position:absolute;top:.8rem;right:1rem;color:#0f4a4c;font-size:1.1rem}
-pre{background:var(--tar);color:var(--foam);padding:1rem;overflow-x:auto;border-left:4px solid var(--amber)}
-code{font-family:ui-monospace,monospace}
-.lotnum{color:#8a5a10;font-family:'Belgrano',serif}
-.callout{background:var(--tar);color:var(--foam);border:1px solid #7c6a45;padding:.2rem 1.3rem 1rem;margin:1.3rem 0}
-.callout h3{color:var(--amber)}
-.flags{height:26px;margin:1.4rem 0;background:linear-gradient(90deg,#dfe8d8 0 8%,transparent 8% 14%,#c96f52 14% 22%,transparent 22% 28%,#e5c86e 28% 36%,transparent 36% 42%,#6d7a84 42% 50%,transparent 50% 56%,#dfe8d8 56% 64%,transparent 64% 70%,#c96f52 70% 78%,transparent 78% 84%,#e5c86e 84% 92%,transparent 92%);opacity:.9;border-top:2px solid #6d7a84}
-.entry{display:flex;gap:1rem;padding:.55rem 0;border-bottom:1px solid rgba(10,52,54,.25)}
-.entry b{font-family:'Belgrano',serif;font-weight:400;min-width:170px;color:#0a3436}
-.resultline{font-size:1.15rem}
-footer{color:var(--near)}
+@font-face{font-family:'Vidaloka';src:url('fonts/Vidaloka-Regular.ttf') format('truetype');font-weight:400;font-style:normal;}
+@font-face{font-family:'Gentium Plus';src:url('fonts/GentiumPlus-Regular.ttf') format('truetype');font-weight:400;font-style:normal;}
+@font-face{font-family:'Gentium Plus';src:url('fonts/GentiumPlus-Bold.ttf') format('truetype');font-weight:700;font-style:normal;}
+@font-face{font-family:'Gentium Plus';src:url('fonts/GentiumPlus-Italic.ttf') format('truetype');font-weight:400;font-style:italic;}
+:root{--bg:#2e2119;--panel:#f3ead8;--ink:#241a12;--accent:#b98a2f;--paper:#faf5ea}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Gentium Plus',serif;line-height:1.65}
+h1,h2{font-family:'Vidaloka',serif;font-weight:400}
+.hero img{width:100%;height:52vh;object-fit:cover;display:block}
+.wrap{max-width:1000px;margin:0 auto;padding:1rem 6vw 2.5rem}
+.card{background:var(--paper);border-radius:12px;padding:1.2rem 1.6rem 1.6rem;margin-top:1.2rem}
+.logo{width:300px;max-width:80vw;display:block;margin:.6rem 0}
+.banner{width:100%;display:block;border-radius:8px;margin:.8rem 0}
+.lede{font-size:1.15rem}
+code{background:rgba(0,0,0,.08);padding:.05rem .35rem;border-radius:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.grid img{width:100%}
+footer{color:var(--panel);max-width:1000px;margin:0 auto;padding:0 6vw 2rem;font-size:.92rem}
+a{color:var(--accent)}
 </style>
 </head>
 <body>
-<header class="hero">
-<img class="heroimg" src="assets/intro-banner.png" alt="A quay before the sale: sea chests on dock boards, a blank auction board, unlit lanterns, a brass bell on its post, and open water under a low sun, with no lettering anywhere">
-<div class="in">
-<img class="logo" src="assets/logo.png" alt="One domed sea chest with iron bands, a painted compass rose, and one amber glint on the hasp, over the project name">
+<div class="hero"><img src="assets/intro-banner.png" alt="A hand resting flat on a large closed leather stud book on a timber desk, its brass clasp at the fore edge and a red ribbon marker trailing over the desk edge, bridles on the wall and a stable yard window behind"></div>
+<div class="wrap"><div class="card">
+<img class="logo" src="assets/logo.png" alt="An emblem of a closed leather stud book with a brass clasp and a red ribbon marker on a round timber ground, with a brass measuring stick laid below it">
 <h1>codeintel-inconsistent-naming-convention-detector</h1>
-<p>A lot catalogue read from the quay inward, for a sale of unclaimed sea chests whose names have gone missing.</p>
-<p><a href="https://github.com/ShadowGuard-AI/codeintel-inconsistent-naming-convention-detector">The repository</a></p>
-</div>
-</header>
-<main>
-<section>
-<nav aria-label="Sale actions">
-<a class="btn" href="#calling">Check the Names in One File</a>
-<a class="btn" href="#lots">Set the Variable Pattern</a>
-<a class="btn" href="#lots">Set the Function Pattern</a>
-<a class="btn" href="#lots">Show Help</a>
-</nav>
-<p>Open the catalogue lot by lot. Amber at this sale belongs to lamplight and to the hasp of the chest on the cover, so it appears sparingly here: on lot numbers and on the line that reports a result.</p>
-<div class="flags" aria-hidden="true"></div>
-<div class="plate"><span class="rose" aria-hidden="true">&#10038;</span>
-<h2>One File, Read Line by Line</h2>
-<p>The program identifies inconsistencies in naming conventions, for instance in variable names and function names, across the codebase, using regular expressions or simple parsing to detect violations of established naming patterns. The correction follows in the same breath: the code as written opens exactly one Python file, the single file named on the command line, reads it line by line with two regular expressions rather than with a syntax tree, and tests each assignment target that stands at the start of a line and each name that follows the word def.</p>
-<p>It reports any of those names that fail the variable pattern or the function pattern. Both patterns default to the snake_case pattern <code>^[a-z][a-z0-9_]*$</code>, which requires a lower case opening letter followed only by lower case letters, digits, and underscores. Class names, argument names, and attribute names are never tested at all, and pass in silence however they are spelled.</p>
-<p>The reading is linewise and literal. A name inside a string or a comment that happens to look like an assignment is read as an assignment, a known and accepted noise that the code comments themselves acknowledge. A comparison is not mistaken for an assignment, because the expression is anchored so that the left side of a double equals sign is not reported twice over.</p>
-</div>
-</section>
-<section>
-<div class="plate"><span class="rose" aria-hidden="true">&#10038;</span>
-<h2>Sale Particulars</h2>
-<p><span class="lotnum">Lot 1.</span> The clone line, exactly as the README prints it:</p>
-<pre><code>git clone https://github.com/ShadowStrikeHQ/codeintel-inconsistent-naming-convention-detector</code></pre>
-<div class="callout">
-<h3>Lot Note, Wrong Seller Named</h3>
-<p>The address above names ShadowStrikeHQ rather than ShadowGuard-AI. It is shown as printed rather than quietly mended.</p>
-</div>
-<p>As a fact about the repository rather than about the README: no change of directory and no installation step follow the clone in the README. The repository carries a requirements.txt stating that main.py uses only the standard library. The bandit, flake8, pylint, and pyre-check entries that once stood there were removed because this tool neither imports nor runs them.</p>
-</div>
-<div class="flags" aria-hidden="true"></div>
-</section>
-<section id="calling">
-<div class="plate"><span class="rose" aria-hidden="true">&#10038;</span>
-<h2>The Manner of Calling the Sale</h2>
-<p>The README usage line, kept as printed:</p>
-<pre><code>./codeintel-inconsistent-naming-convention-detector [params]</code></pre>
-<p>That line is a placeholder that the argument parser does not accept. The invocation the parser in main.py does accept:</p>
-<pre><code>python3 main.py FILENAME [--variable-pattern REGEX] [--function-pattern REGEX]</code></pre>
-<div class="callout">
-<h3>Lot Note, The File Argument Is Missing From the README</h3>
-<p>Filename, the path to the Python file to analyse, is a required positional argument that appears in no README parameter entry. It is refused with an error and exit 1 when the path does not exist or names a directory rather than a file. It is restored in the lot list below and marked as restored, so the omission stays visible in the record.</p>
-</div>
-</div>
-</section>
-<section id="lots">
-<div class="plate"><span class="rose" aria-hidden="true">&#10038;</span>
-<h2>Two Patterns, Both Snake by Default</h2>
-<p>The parameters as successive lots, in the order the README gives them, with the restored filename entry placed first and marked.</p>
-<div class="entry"><b><span class="lotnum">Lot 2.</span> filename (restored)</b><span>The path to the Python file to analyse. Required. Absent from the README list; restored here and marked.</span></div>
-<div class="entry"><b><span class="lotnum">Lot 3.</span> -h</b><span>Shows a help message and exits.</span></div>
-<div class="entry"><b><span class="lotnum">Lot 4.</span> --variable-pattern</b><span>Regex for the variable naming convention, described in the README with default snake_case. The code default is the precise pattern <code>^[a-z][a-z0-9_]*$</code>.</span></div>
-<div class="entry"><b><span class="lotnum">Lot 5.</span> --function-pattern</b><span>Regex for the function naming convention, in the same terms, with the same default and the same precise pattern.</span></div>
-<p>There are no other options in either the README list or the parser.</p>
-</div>
-<div class="flags" aria-hidden="true"></div>
-</section>
-<section>
-<div class="plate"><span class="rose" aria-hidden="true">&#10038;</span>
-<h2>The List Is the Result</h2>
-<p class="resultline">The program prints either a headed list giving, for each inconsistency, its line number, its kind as Variable or Function, and the offending name itself, or the sentence reporting that no naming convention inconsistencies were found.</p>
-<p>It exits 0 in both cases. A file crowded with bad names and a clean file return the same code, so the printed list is the whole result, and no reader may treat the exit code as a verdict upon the names.</p>
-<h3>Licence, two facts side by side</h3>
-<p>The README closes with Copyright (c) ShadowStrikeHQ, flagged here in the same lot note manner as the clone line above. The repository LICENSE file carries the MIT License. Both facts stand without reconciliation.</p>
-<p><img src="assets/banner.png" alt="A row of sea chests on the quay falling away toward a brass bell, with the painted auction board carrying the project name" style="width:100%"></p>
-</div>
-</section>
-</main>
-<footer>
-<p>The sale concluded: the chest safe in harbour light, the bell still unstruck, and the printed list left upon the catalogue table for whoever buys the lot and opens it.</p>
-</footer>
+<p class="lede">One Python file, read line by line, and every entered name checked against the one pattern the book allows.</p>
+<img class="banner" src="assets/banner.png" alt="A registrar at his desk in a stable office with his hand on the closed leather stud book, a brass lamp lit, sealing wax and a measuring stick on the desk, and plain stall doors seen through the window behind">
+<section><h2>What the registrar does</h2><p><code>codeintel-inconsistent-naming-convention-detector</code> is a Python tool from ShadowGuard-AI, standard library only. It reads one Python file line by line with regular expressions and reports the names that break two patterns.</p><p>Run it as <code>python3 main.py FILENAME</code>. The flags <code>--variable-pattern</code> and <code>--function-pattern</code> each default to the snake_case pattern <code>^[a-z][a-z0-9_]*$</code>.</p></section>
+<section><h2>What is tested, and what passes in silence</h2><p>Only two kinds of name are ever tested: assignment targets at a line start (an anchored search that deliberately refuses the left side of a comparison) and function names after <code>def</code>. Class names, arguments, and attributes are never tested against either pattern, so a CamelCase class passes in silence.</p><p>Because the scan is line by line text, a name inside a string or a comment that looks like an assignment is read as one. The code accepts that noise in exchange for not parsing.</p></section>
+<section><h2>Exit codes</h2><p>Findings never move the exit code: a file full of bad names and a clean file both exit 0, and the printed list is the whole result. A missing file or a directory exits 1.</p></section>
+<section><h2>Kept as printed</h2><p>The README clone line names the stale ShadowStrikeHQ organisation, its usage line is a placeholder naming an executable the repo does not ship, its parameter list omits the required positional filename, and its closing licence line reads Copyright (c) ShadowStrikeHQ while the LICENSE file is MIT. All four stand as printed in the README and are flagged there.</p></section>
+<section><h2>Diagrams</h2><div class="grid">
+<figure><img src="assets/architecture.png" alt="Architecture diagram for this repository"><figcaption>Architecture</figcaption></figure>
+<figure><img src="assets/flowchart.png" alt="Flowchart diagram for this repository"><figcaption>Flowchart</figcaption></figure>
+<figure><img src="assets/product-map.png" alt="Product map diagram for this repository"><figcaption>Product map</figcaption></figure>
+</div></section>
+</div></div>
+<footer><p>Part of ShadowGuard-AI. Fonts: Vidaloka and Gentium Plus, self-hosted; licence texts sit beside the font files. Theme: The Stud Book Registrar.</p></footer>
 </body>
 </html>
